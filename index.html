@@ -19,17 +19,8 @@
             --gray: #8A8A8A;
             --gray-light: #B0B0B0;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', sans-serif;
             background: var(--black);
@@ -37,8 +28,6 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -50,38 +39,16 @@
             padding: 2rem;
             background: linear-gradient(180deg, var(--black) 0%, var(--black-soft) 100%);
         }
-
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.03) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.03) 0%, transparent 50%);
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.03) 0%, transparent 50%), radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.03) 0%, transparent 50%);
             pointer-events: none;
         }
-
-        .logo-container {
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .logo-symbol {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
-            position: relative;
-        }
-
-        .logo-symbol svg {
-            width: 100%;
-            height: 100%;
-        }
-
+        .logo-container { margin-bottom: 2rem; position: relative; z-index: 1; }
+        .logo-symbol { width: 80px; height: 80px; margin: 0 auto 1.5rem; }
+        .logo-symbol svg { width: 100%; height: 100%; }
         .company-name {
             font-family: 'Playfair Display', serif;
             font-size: 0.85rem;
@@ -91,7 +58,6 @@
             margin-bottom: 0.5rem;
             font-weight: 400;
         }
-
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2.5rem, 6vw, 5rem);
@@ -102,11 +68,7 @@
             position: relative;
             z-index: 1;
         }
-
-        .hero h1 .gold {
-            color: var(--gold);
-        }
-
+        .hero h1 .gold { color: var(--gold); }
         .hero-subtitle {
             font-family: 'Playfair Display', serif;
             font-size: clamp(1.1rem, 2.5vw, 1.5rem);
@@ -117,7 +79,6 @@
             position: relative;
             z-index: 1;
         }
-
         .hero-tagline {
             font-size: 0.95rem;
             letter-spacing: 0.15em;
@@ -127,7 +88,6 @@
             position: relative;
             z-index: 1;
         }
-
         .hero-cta {
             display: flex;
             gap: 1.5rem;
@@ -136,7 +96,6 @@
             position: relative;
             z-index: 1;
         }
-
         .btn {
             padding: 1rem 2.5rem;
             font-family: 'Inter', sans-serif;
@@ -149,29 +108,24 @@
             cursor: pointer;
             font-weight: 500;
         }
-
         .btn-primary {
             background: var(--gold);
             color: var(--black);
         }
-
         .btn-primary:hover {
             background: var(--gold-light);
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(201,168,76,0.2);
         }
-
         .btn-outline {
             background: transparent;
             color: var(--gold);
         }
-
         .btn-outline:hover {
             background: var(--gold);
             color: var(--black);
             transform: translateY(-2px);
         }
-
         .scroll-indicator {
             position: absolute;
             bottom: 2rem;
@@ -179,7 +133,6 @@
             transform: translateX(-50%);
             animation: bounce 2s infinite;
         }
-
         .scroll-indicator svg {
             width: 24px;
             height: 24px;
@@ -187,19 +140,14 @@
             stroke-width: 2;
             fill: none;
         }
-
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
             40% { transform: translateX(-50%) translateY(-10px); }
             60% { transform: translateX(-50%) translateY(-5px); }
         }
-
-        /* Navigation */
         nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 1000;
             padding: 1.5rem 2rem;
             background: rgba(10,10,10,0.9);
@@ -210,12 +158,7 @@
             align-items: center;
             transition: all 0.3s ease;
         }
-
-        nav.scrolled {
-            padding: 1rem 2rem;
-            background: rgba(10,10,10,0.98);
-        }
-
+        nav.scrolled { padding: 1rem 2rem; background: rgba(10,10,10,0.98); }
         .nav-logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.1rem;
@@ -223,13 +166,11 @@
             text-decoration: none;
             letter-spacing: 0.1em;
         }
-
         .nav-links {
             display: flex;
             gap: 2.5rem;
             list-style: none;
         }
-
         .nav-links a {
             color: var(--gray-light);
             text-decoration: none;
@@ -239,11 +180,7 @@
             transition: color 0.3s ease;
             font-weight: 500;
         }
-
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-
+        .nav-links a:hover { color: var(--gold); }
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -252,52 +189,33 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-
-        /* Sections */
-        section {
-            padding: 6rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
+        section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
         .section-header h2 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 4vw, 3rem);
             color: var(--white);
             margin-bottom: 1rem;
         }
-
         .section-header .gold-line {
             width: 60px;
             height: 2px;
             background: var(--gold);
             margin: 0 auto 1.5rem;
         }
-
         .section-header p {
             color: var(--gray);
             max-width: 600px;
             margin: 0 auto;
             font-size: 1.05rem;
         }
-
-        /* About Section */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
-
-        .about-image {
-            position: relative;
-        }
-
+        .about-image { position: relative; }
         .about-image img {
             width: 100%;
             max-width: 450px;
@@ -305,38 +223,28 @@
             filter: grayscale(20%);
             transition: filter 0.4s ease;
         }
-
-        .about-image:hover img {
-            filter: grayscale(0%);
-        }
-
+        .about-image:hover img { filter: grayscale(0%); }
         .about-image::before {
             content: '';
             position: absolute;
-            top: -20px;
-            left: -20px;
-            right: 20px;
-            bottom: 20px;
+            top: -20px; left: -20px; right: 20px; bottom: 20px;
             border: 1px solid var(--gold);
             border-radius: 4px;
             z-index: -1;
             opacity: 0.5;
         }
-
         .about-content h3 {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
             color: var(--gold);
             margin-bottom: 1.5rem;
         }
-
         .about-content p {
             color: var(--gray-light);
             margin-bottom: 1.5rem;
             font-size: 1.05rem;
             line-height: 1.8;
         }
-
         .about-quote {
             border-left: 3px solid var(--gold);
             padding-left: 1.5rem;
@@ -346,19 +254,15 @@
             font-size: 1.1rem;
             line-height: 1.7;
         }
-
         .about-signature {
             font-family: 'Playfair Display', serif;
             color: var(--gold);
             font-size: 1.2rem;
         }
-
-        /* Services Section */
         .services {
             background: var(--black-soft);
             padding: 6rem 2rem;
         }
-
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -366,7 +270,6 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-
         .service-card {
             background: var(--black-card);
             border: 1px solid rgba(201,168,76,0.15);
@@ -376,30 +279,22 @@
             position: relative;
             overflow: hidden;
         }
-
         .service-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
             background: var(--gold);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.4s ease;
         }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
+        .service-card:hover::before { transform: scaleX(1); }
         .service-card:hover {
             border-color: rgba(201,168,76,0.4);
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
-
         .service-icon {
             width: 48px;
             height: 48px;
@@ -408,50 +303,36 @@
             stroke-width: 1.5;
             fill: none;
         }
-
         .service-card h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.3rem;
             color: var(--white);
             margin-bottom: 1rem;
         }
-
         .service-card p {
             color: var(--gray);
             font-size: 0.95rem;
             line-height: 1.7;
         }
-
-        /* Pledge Section */
         .pledge {
             text-align: center;
             padding: 6rem 2rem;
             background: linear-gradient(180deg, var(--black) 0%, var(--black-soft) 50%, var(--black) 100%);
         }
-
-        .pledge-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
+        .pledge-content { max-width: 800px; margin: 0 auto; }
         .pledge h2 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(1.8rem, 3.5vw, 2.5rem);
             color: var(--gold);
             margin-bottom: 2rem;
         }
-
         .pledge-items {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-
-        .pledge-item {
-            padding: 1.5rem;
-        }
-
+        .pledge-item { padding: 1.5rem; }
         .pledge-item .number {
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
@@ -459,7 +340,6 @@
             opacity: 0.3;
             margin-bottom: 0.5rem;
         }
-
         .pledge-item h4 {
             font-size: 1rem;
             letter-spacing: 0.1em;
@@ -467,18 +347,14 @@
             color: var(--white);
             margin-bottom: 0.5rem;
         }
-
         .pledge-item p {
             color: var(--gray);
             font-size: 0.9rem;
         }
-
-        /* Contact Section */
         .contact {
             background: var(--black-soft);
             padding: 6rem 2rem;
         }
-
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -486,12 +362,7 @@
             max-width: 1000px;
             margin: 0 auto;
         }
-
-        .contact-card {
-            text-align: center;
-            padding: 2rem;
-        }
-
+        .contact-card { text-align: center; padding: 2rem; }
         .contact-icon {
             width: 40px;
             height: 40px;
@@ -500,7 +371,6 @@
             stroke-width: 1.5;
             fill: none;
         }
-
         .contact-card h4 {
             font-size: 0.85rem;
             letter-spacing: 0.15em;
@@ -508,26 +378,19 @@
             color: var(--gray);
             margin-bottom: 0.5rem;
         }
-
         .contact-card a, .contact-card p {
             color: var(--white);
             text-decoration: none;
             font-size: 1.1rem;
             transition: color 0.3s ease;
         }
-
-        .contact-card a:hover {
-            color: var(--gold);
-        }
-
-        /* Footer */
+        .contact-card a:hover { color: var(--gold); }
         footer {
             background: var(--black);
             padding: 3rem 2rem;
             text-align: center;
             border-top: 1px solid rgba(201,168,76,0.1);
         }
-
         .footer-logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.2rem;
@@ -535,66 +398,31 @@
             margin-bottom: 1rem;
             letter-spacing: 0.1em;
         }
-
         .footer-tagline {
             color: var(--gray);
             font-size: 0.9rem;
             margin-bottom: 1.5rem;
         }
-
         .footer-copy {
             color: var(--gray);
             font-size: 0.8rem;
             opacity: 0.6;
         }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .about-image {
-                order: -1;
-                text-align: center;
-            }
-
-            .about-image img {
-                max-width: 300px;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-
-            section {
-                padding: 4rem 1.5rem;
-            }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .about-image { order: -1; text-align: center; }
+            .about-image img { max-width: 300px; }
+            .hero-cta { flex-direction: column; width: 100%; max-width: 300px; }
+            .btn { width: 100%; text-align: center; }
+            section { padding: 4rem 1.5rem; }
         }
-
-        /* Animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
@@ -602,7 +430,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav id="navbar">
         <a href="#" class="nav-logo">AXIS</a>
         <ul class="nav-links">
@@ -613,8 +440,6 @@
         </ul>
         <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
     </nav>
-
-    <!-- Hero -->
     <section class="hero" id="home">
         <div class="logo-container">
             <div class="logo-symbol">
@@ -635,14 +460,9 @@
             <a href="#services" class="btn btn-outline">Explore Services</a>
         </div>
         <div class="scroll-indicator">
-            <svg viewBox="0 0 24 24">
-                <path d="M12 5v14M5 12l7 7 7-7"/>
-            </svg>
+            <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
         </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="about-grid">
+    </section>    <section id="about" class="about-grid">
         <div class="about-content fade-in">
             <h3>Johnny Morales</h3>
             <p><strong style="color: var(--gold);">Founder & Principal Broker</strong></p>
@@ -654,11 +474,9 @@
             <p class="about-signature">— Johnny Morales</p>
         </div>
         <div class="about-image fade-in">
-            <img src="johnny-morales.jpg" alt="Johnny Morales - Founder & Principal Broker, Axis Fiduciary Energy">
+            <img src="JohnnyMorales).jpg" alt="Johnny Morales - Founder & Principal Broker, Axis Fiduciary Energy">
         </div>
     </section>
-
-    <!-- Services -->
     <section id="services" class="services">
         <div class="section-header">
             <h2>Global Energy <span style="color: var(--gold);">Services</span></h2>
@@ -718,8 +536,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Pledge -->
     <section id="pledge" class="pledge">
         <div class="pledge-content">
             <h2>The Anti-Fraud <span style="color: var(--gold);">Pledge</span></h2>
@@ -752,8 +568,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Contact -->
     <section id="contact" class="contact">
         <div class="section-header">
             <h2>Initiate <span style="color: var(--gold);">Contact</span></h2>
@@ -795,16 +609,12 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
     <footer>
         <div class="footer-logo">AXIS FIDUCIARY ENERGY</div>
         <p class="footer-tagline">Everything Moves on Energy.</p>
         <p class="footer-copy">© 2026 Axis Fiduciary Energy. All rights reserved. | Integrity. Execution. Energy.</p>
     </footer>
-
     <script>
-        // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -813,13 +623,10 @@
                 navbar.classList.remove('scrolled');
             }
         });
-
-        // Fade in animation
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -827,12 +634,9 @@
                 }
             });
         }, observerOptions);
-
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
-
-        // Mobile menu toggle
         function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
@@ -847,3 +651,4 @@
     </script>
 </body>
 </html>
+
