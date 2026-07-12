@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axis Fiduciary Energy | Disciplined Global Energy Commerce</title>
+    <meta name="description" content="Axis Fiduciary Energy - Crude Oil, LNG, Refined Products, LPG & NGLs. Clean Execution. Quiet Strength. Global Respect.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C9A84C;
+            --gold-light: #D4B85A;
+            --gold-dark: #A0852C;
+            --black: #0A0A0A;
+            --black-soft: #111111;
+            --black-card: #161616;
+            --white: #F5F5F5;
+            --gray: #8A8A8A;
+            --gray-light: #B0B0B0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+            background: linear-gradient(180deg, var(--black) 0%, var(--black-soft) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.03) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .logo-container {
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-symbol {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+
+        .logo-symbol svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .company-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 .gold {
+            color: var(--gold);
+        }
+
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-style: italic;
+            color: var(--gold-light);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tagline {
+            font-size: 0.95rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid var(--gold);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201,168,76,0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--black);
+            transform: translateY(-2px);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--gold);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 2rem;
+            background: rgba(10,10,10,0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201,168,76,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 1rem 2rem;
+            background: rgba(10,10,10,0.98);
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-light);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .section-header .gold-line {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 0 auto 1.5rem;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 4px;
+            filter: grayscale(20%);
+            transition: filter 0.4s ease;
+        }
+
+        .about-image:hover img {
+            filter: grayscale(0%);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid var(--gold);
+            border-radius: 4px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .about-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: var(--gray-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about-quote {
+            border-left: 3px solid var(--gold);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--white);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .about-signature {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--black-soft);
+            padding: 6rem 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--black-card);
+            border: 1px solid rgba(201,168,76,0.15);
+            padding: 2.5rem;
+            border-radius: 4px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            border-color: rgba(201,168,76,0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1.5rem;
+            stroke: var(--gold);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Pledge Section */
+        .pledge {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, var(--black) 0%, var(--black-soft) 50%, var(--black) 100%);
+        }
+
+        .pledge-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pledge h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            color: var(--gold);
+            margin-bottom: 2rem;
+        }
+
+        .pledge-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pledge-item {
+            padding: 1.5rem;
+        }
+
+        .pledge-item .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            opacity: 0.3;
+            margin-bottom: 0.5rem;
+        }
+
+        .pledge-item h4 {
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .pledge-item p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--black-soft);
+            padding: 6rem 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 1rem;
+            stroke: var(--gold);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .contact-card h4 {
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a, .contact-card p {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: var(--gold);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(201,168,76,0.1);
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .footer-tagline {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-copy {
+            color: var(--gray);
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                order: -1;
+                text-align: center;
+            }
+
+            .about-image img {
+                max-width: 300px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#" class="nav-logo">AXIS</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pledge">Pledge</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="logo-container">
+            <div class="logo-symbol">
+                <svg viewBox="0 0 100 100">
+                    <polygon points="50,5 95,95 5,95" fill="none" stroke="#C9A84C" stroke-width="2"/>
+                    <circle cx="50" cy="55" r="20" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+                    <line x1="50" y1="35" x2="50" y2="75" stroke="#C9A84C" stroke-width="1.5"/>
+                    <line x1="30" y1="55" x2="70" y2="55" stroke="#C9A84C" stroke-width="1.5"/>
+                </svg>
+            </div>
+            <div class="company-name">Axis Fiduciary Energy</div>
+        </div>
+        <h1>Everything Moves<br>on <span class="gold">Energy.</span></h1>
+        <p class="hero-subtitle">Disciplined global energy commerce.</p>
+        <p class="hero-tagline">Clean Execution. Quiet Strength. Global Respect.</p>
+        <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Initiate Contact</a>
+            <a href="#services" class="btn btn-outline">Explore Services</a>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about-grid">
+        <div class="about-content fade-in">
+            <h3>Johnny Morales</h3>
+            <p><strong style="color: var(--gold);">Founder & Principal Broker</strong></p>
+            <p>Half Lakota, half Mexica. The hunter reads the wind and water. The architect builds what endures. Axis Fiduciary Energy is the fusion of both bloodlines — sovereign energy commerce built on discipline, power, and faith.</p>
+            <p>We broker real energy for real counterparties. No daisy chains. No Gmail brokers. No fiction. Every connection verified. Every document authenticated. Every deal executed with the precision of a Lakota hunter and the engineering genius of a Mexica builder.</p>
+            <div class="about-quote">
+                "I didn't come to this planet to follow. I came here to remind the world what integrity, honor, dignity, and respect look like."
+            </div>
+            <p class="about-signature">— Johnny Morales</p>
+        </div>
+        <div class="about-image fade-in">
+            <img src="johnny-morales.jpg" alt="Johnny Morales - Founder & Principal Broker, Axis Fiduciary Energy">
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>Global Energy <span style="color: var(--gold);">Services</span></h2>
+            <div class="gold-line"></div>
+            <p>Strategic supply connections worldwide. Verified, compliant, and bankable energy solutions.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <svg class="service-icon" viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="20"/>
+                    <path d="M24 14v20M18 20l6-6 6 6"/>
+                </svg>
+                <h3>Crude Oil</h3>
+                <p>Strategic sourcing and distribution of crude petroleum across global markets. Verified counterparties, authenticated documentation, clean chain of custody.</p>
+            </div>
+            <div class="service-card fade-in">
+                <svg class="service-icon" viewBox="0 0 48 48">
+                    <rect x="8" y="16" width="32" height="20" rx="2"/>
+                    <path d="M16 16v-4a8 8 0 0116 0v4"/>
+                    <line x1="24" y1="24" x2="24" y2="32"/>
+                </svg>
+                <h3>Refined Products</h3>
+                <p>Diesel, gasoline, jet fuel, and heating oil logistics. End-to-end supply chain management from refinery to end-user with full compliance documentation.</p>
+            </div>
+            <div class="service-card fade-in">
+                <svg class="service-icon" viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="18"/>
+                    <circle cx="24" cy="24" r="8"/>
+                    <path d="M24 6v8M24 34v8M6 24h8M34 24h8"/>
+                </svg>
+                <h3>LPG & NGLs</h3>
+                <p>Liquefied petroleum gas and natural gas liquids brokerage. Specialized handling, storage coordination, and regulatory compliance across jurisdictions.</p>
+            </div>
+            <div class="service-card fade-in">
+                <svg class="service-icon" viewBox="0 0 48 48">
+                    <path d="M8 36h32M12 36V20a12 12 0 0124 0v16"/>
+                    <line x1="24" y1="8" x2="24" y2="14"/>
+                </svg>
+                <h3>Natural Gas (LNG)</h3>
+                <p>Liquefied natural gas transactions and logistics. LNG carrier coordination, terminal access, and long-term supply agreements with verified counterparties.</p>
+            </div>
+            <div class="service-card fade-in">
+                <svg class="service-icon" viewBox="0 0 48 48">
+                    <path d="M8 40V20l16-12 16 12v20"/>
+                    <rect x="16" y="24" width="16" height="16"/>
+                </svg>
+                <h3>Petrochemicals</h3>
+                <p>Feedstocks and petrochemical intermediates. Ethylene, propylene, aromatics, and specialty chemicals for industrial manufacturing clients.</p>
+            </div>
+            <div class="service-card fade-in">
+                <svg class="service-icon" viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="20"/>
+                    <path d="M24 12v12l8 8"/>
+                </svg>
+                <h3>Market Intelligence</h3>
+                <p>Real-time energy market analysis, price benchmarking, and counterparty verification services. Intelligence that protects your position.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pledge -->
+    <section id="pledge" class="pledge">
+        <div class="pledge-content">
+            <h2>The Anti-Fraud <span style="color: var(--gold);">Pledge</span></h2>
+            <p style="color: var(--gray); font-size: 1.1rem; line-height: 1.8;">
+                The commodity markets are polluted with daisy chains, ghost brokers, and advance-fee fraud. 
+                We operate differently. We verify before we trust. We document before we execute. 
+                We build relationships on bedrock, not sand.
+            </p>
+            <div class="pledge-items">
+                <div class="pledge-item">
+                    <div class="number">01</div>
+                    <h4>Verified</h4>
+                    <p>Every counterparty authenticated. No Gmail brokers. No anonymous intermediaries.</p>
+                </div>
+                <div class="pledge-item">
+                    <div class="number">02</div>
+                    <h4>Compliant</h4>
+                    <p>Full documentation chain. Bankable instruments. Legal frameworks observed.</p>
+                </div>
+                <div class="pledge-item">
+                    <div class="number">03</div>
+                    <h4>Transparent</h4>
+                    <p>No hidden fees. No surprise commissions. Every term disclosed upfront.</p>
+                </div>
+                <div class="pledge-item">
+                    <div class="number">04</div>
+                    <h4>Accountable</h4>
+                    <p>We answer for every connection. Our reputation is our collateral.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2>Initiate <span style="color: var(--gold);">Contact</span></h2>
+            <div class="gold-line"></div>
+            <p>Serious inquiries only. Verified counterparties welcome.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <svg class="contact-icon" viewBox="0 0 24 24">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                <h4>Email</h4>
+                <a href="mailto:info@axisfiduciaryenergy.com">info@axisfiduciaryenergy.com</a>
+            </div>
+            <div class="contact-card">
+                <svg class="contact-icon" viewBox="0 0 24 24">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+                <h4>Telephone</h4>
+                <a href="tel:+14158004935">+1 (415) 800-4935</a>
+            </div>
+            <div class="contact-card">
+                <svg class="contact-icon" viewBox="0 0 24 24">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <h4>Location</h4>
+                <p>San Francisco, California</p>
+            </div>
+            <div class="contact-card">
+                <svg class="contact-icon" viewBox="0 0 24 24">
+                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/>
+                    <circle cx="4" cy="4" r="2"/>
+                </svg>
+                <h4>LinkedIn</h4>
+                <a href="https://linkedin.com/in/axisfiduciary" target="_blank">linkedin.com/in/axisfiduciary</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">AXIS FIDUCIARY ENERGY</div>
+        <p class="footer-tagline">Everything Moves on Energy.</p>
+        <p class="footer-copy">© 2026 Axis Fiduciary Energy. All rights reserved. | Integrity. Execution. Energy.</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Fade in animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.background = 'rgba(10,10,10,0.98)';
+            navLinks.style.padding = '2rem';
+        }
+    </script>
+</body>
+</html>
